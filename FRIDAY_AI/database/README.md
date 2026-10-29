@@ -1,0 +1,1 @@
+FRIDAY creates `friday.db`, `friday.log`, and a process record here at runtime (unless `FRIDAY_DATA_DIR` is configured). Chat, approved memory, schedules and action metadata are stored locally without encryption. Do not put passwords or authentication tokens in FRIDAY. Stop FRIDAY before backing up or deleting its database.

@@ -1,0 +1,1 @@
+Optional speech components: install `requirements-voice.txt`, a local faster-whisper model, and (for offline TTS) a Piper executable plus ONNX voice and matching ONNX JSON. Nothing here downloads models automatically. See the main README.

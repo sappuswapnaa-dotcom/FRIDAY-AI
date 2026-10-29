@@ -1,0 +1,1 @@
+Place an optional local CTranslate2 faster-whisper model in `models/whisper/` (including `model.bin`). No model is included or downloaded automatically. See the project README for explicit download instructions. Ollama language and vision models are managed by Ollama itself.

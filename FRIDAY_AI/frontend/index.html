@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050b13"><title>FRIDAY — Intelligence in Motion</title><link rel="stylesheet" href="/styles.css"></head>
+<body>
+<div class="app-shell">
+  <aside class="rail">
+    <div class="brand-mark">F<span>✦</span></div>
+    <div class="rail-nav" id="nav">
+      <button class="nav-item active" data-page="command" title="Command"><span>◉</span><small>COMMAND</small></button>
+      <button class="nav-item" data-page="files" title="Workspace"><span>▤</span><small>FILES</small></button>
+      <button class="nav-item" data-page="studio" title="Document studio"><span>▧</span><small>STUDIO</small></button>
+      <button class="nav-item" data-page="models" title="Models"><span>⌘</span><small>MODELS</small></button>
+    </div>
+    <div class="rail-bottom"><span class="online-dot"></span><small>LOCAL</small><button id="settingsBtn" title="System information">⚙</button></div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar"><div class="crumb"><span>FRIDAY</span><i>/</i><b id="pageTitle">COMMAND DECK</b></div><div class="top-status"><span id="ollamaPill" class="pill offline"><i></i><span>CONNECTING</span></span><span class="local-tag">⌂ &nbsp;LOCAL SESSION</span><button class="avatar">R</button></div></header>
+    <section id="commandPage" class="page active">
+      <div class="hero-grid">
+        <div class="intro"><div class="eyebrow"><span class="eyebrow-line"></span> PERSONAL INTELLIGENCE SYSTEM <span class="version">v0.1 / LOCAL</span></div><h1>Good to see you,<br><em>Ruthwik.</em></h1><p class="intro-copy">Your command center is ready. What would you like to make happen?</p></div>
+        <div class="telemetry"><div><span>INFERENCE</span><b id="modelName">NO MODEL</b></div><div><span>RUNTIME</span><b>ON DEVICE</b></div><div><span>PRIVACY</span><b><i class="online-dot"></i> LOCAL ONLY</b></div></div>
+      </div>
+      <div class="workspace-grid">
+        <section class="core-panel panel">
+          <div class="panel-head"><div><span class="section-kicker">01 / INTELLIGENCE CORE</span><h2 id="coreTitle">Standing by</h2></div><span class="state-tag" id="stateTag">STANDBY</span></div>
+          <div class="core-stage" id="coreStage"><canvas id="coreCanvas" aria-label="Animated FRIDAY intelligence core"></canvas><div class="core-label"><span class="core-pulse"></span> FRIDAY <small id="coreSub">LOCAL INFERENCE READY</small></div><div class="orbit-label l1">NEURAL LINK <b>●</b></div><div class="orbit-label l2">SECURE / LOCAL <b>◌</b></div></div>
+          <div class="core-foot"><span><i class="tiny-dot"></i><span id="activityText">Awaiting your instruction</span></span><span id="clock">--:--:--</span></div>
+        </section>
+        <section class="chat-panel panel">
+          <div class="panel-head chat-head"><div><span class="section-kicker">02 / CONVERSATION</span><h2>Talk to FRIDAY</h2></div><div class="chat-head-actions"><select id="modelSelect" aria-label="Select Ollama model"><option value="">AUTO MODEL</option></select><button class="icon-btn" id="newChat" title="New conversation">＋</button></div></div>
+          <div class="messages" id="messages"><div class="welcome-msg"><div class="mini-sigil">F</div><div><b>FRIDAY, at your service.</b><p>Ask a question, make a plan, or ask me to work with files in my private workspace. I’ll tell you clearly when an integration needs setup.</p><div class="suggestions"><button data-prompt="What can you do on this device right now?">Explore capabilities <span>↗</span></button><button data-prompt="Help me plan a small Python project and list the files it will need.">Plan a project <span>↗</span></button></div></div></div></div>
+          <form id="chatForm" class="composer"><textarea id="prompt" rows="1" placeholder="Give FRIDAY an instruction…" aria-label="Message FRIDAY"></textarea><div class="composer-actions"><div class="composer-tools"><button type="button" id="voiceBtn" class="tool-btn" title="Voice input">♩ <span>VOICE</span></button><label class="approve-label" title="Explicitly authorize workspace file creation for this request"><input id="approveWrites" type="checkbox"><span>ALLOW FILE CREATION</span></label></div><button class="send-btn" id="sendBtn" type="submit"><span>TRANSMIT</span><b>↗</b></button></div></form>
+          <div class="privacy-note"><span>◇</span> Conversations are stored locally. File access is restricted to FRIDAY’s workspace.</div>
+        </section>
+      </div>
+      <section class="capabilities"><div class="cap-head"><span class="section-kicker">03 / CAPABILITY SYSTEMS</span><span class="muted">INTEGRATIONS & STATUS</span></div><div class="cap-grid">
+        <button class="cap-card" data-page="studio"><span class="cap-icon">▧</span><span><b>Document studio</b><small>DOCX · PPTX · XLSX · PDF</small></span><span class="cap-arrow">↗</span></button>
+        <button class="cap-card" data-page="files"><span class="cap-icon">⌂</span><span><b>Private workspace</b><small>SAFE FILE OPERATIONS</small></span><span class="cap-arrow">↗</span></button>
+        <button class="cap-card" data-page="models"><span class="cap-icon">◉</span><span><b>Local model manager</b><small id="cardModelStatus">CHECKING OLLAMA</small></span><span class="cap-arrow">↗</span></button>
+        <div class="cap-card disabled-card"><span class="cap-icon">▣</span><span><b>Windows companion</b><small>NOT INSTALLED · WINDOWS ONLY</small></span><span class="cap-lock">⌑</span></div>
+      </div></section>
+      <footer><span>FRIDAY AI <i>—</i> INTELLIGENCE IN MOTION. POWER IN YOUR HANDS.</span><span>BUILD 0.1.0 &nbsp;·&nbsp; <b>NO CLOUD AI</b></span></footer>
+    </section>
+    <section id="filesPage" class="page secondary-page"><div class="page-intro"><span class="section-kicker">WORKSPACE / PRIVATE STORAGE</span><h1>Your files,<br><em>under your control.</em></h1><p>FRIDAY can only access its configured local workspace. No broad disk access.</p></div><div class="panel file-panel"><div class="panel-head"><div><span class="section-kicker">WORKSPACE EXPLORER</span><h2 id="filePath">/</h2></div><div class="chat-head-actions"><button class="outline-btn" id="upFiles">↑ &nbsp; UP</button><button class="outline-btn" id="refreshFiles">↻ &nbsp; REFRESH</button></div></div><div id="fileList" class="file-list"><div class="empty-state">Loading workspace…</div></div></div></section>
+    <section id="studioPage" class="page secondary-page"><div class="page-intro"><span class="section-kicker">CREATION SUITE / LOCAL FILES</span><h1>Make something<br><em>worth sharing.</em></h1><p>Create a real document artifact on this device. Review before distributing.</p></div><div class="studio-layout"><form class="panel studio-form" id="docForm"><span class="section-kicker">DOCUMENT STUDIO</span><label>Artifact type<select id="docKind"><option value="pptx">PowerPoint presentation (.pptx)</option><option value="docx">Word document (.docx)</option><option value="xlsx">Excel workbook (.xlsx)</option><option value="pdf">PDF report (.pdf)</option><option value="md">Markdown file (.md)</option></select></label><label>Title<input id="docTitle" required maxlength="120" placeholder="e.g. Robotics: a field guide"></label><label>Content<textarea id="docBody" required rows="9" placeholder="Write the document content. For a presentation, separate slide content with a blank line; first line on each slide is its heading."></textarea></label><div class="form-hint">Saved under <code>user_files/generated/</code> · files are checked after creation.</div><button class="primary-btn">CREATE ARTIFACT <span>↗</span></button><div id="docResult" class="result-box" hidden></div></form><div class="panel studio-aside"><div class="studio-glow">✧</div><span class="section-kicker">LOCAL GENERATION</span><h2>Real files.<br>Not just previews.</h2><p>Creates Office Open XML files, PDFs and Markdown using local Python libraries. No external service required.</p><div class="support-row"><span>DOCX</span><span>PPTX</span><span>XLSX</span><span>PDF</span></div><p class="small-note">For AI-written content, ask FRIDAY in chat to draft it, then paste it here. Direct chat-to-artifact orchestration is not yet enabled.</p></div></div></section>
+    <section id="modelsPage" class="page secondary-page"><div class="page-intro"><span class="section-kicker">INFERENCE / OLLAMA</span><h1>Your intelligence.<br><em>On your machine.</em></h1><p>FRIDAY uses Ollama exclusively for language-model inference.</p></div><div class="panel model-panel"><div class="panel-head"><div><span class="section-kicker">DETECTED MODELS</span><h2>Available locally</h2></div><button class="outline-btn" id="refreshModels">↻ &nbsp; SCAN AGAIN</button></div><div id="modelList" class="model-list"><div class="empty-state">Scanning Ollama…</div></div><div class="setup-callout"><b>Need a model?</b><code>ollama pull qwen2.5:7b</code><span>Then scan again. Smaller models run better on CPU; hardware needs vary.</span></div></div></section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script src="/app.js"></script></body></html>
